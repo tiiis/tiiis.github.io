@@ -18,41 +18,7 @@ $(document).ready(function(){
 
         if(targetTop > 600){
             $('#backTop').animate({'right':'0'},200);
-        }else if(targetTop <= 600){
-            $('#backTop').stop();
-            $('#backTop').animate({'right':'-40px'},200);
-        }
-    });
-    
-    //顶端导航跳转
-    $(document).on('click','.nav_list',function(){
-        var targetId='_'+$(this).attr('href').substr(1);
-        var targetHeight=document.getElementById(targetId).offsetTop;
-        $("html, body").animate({"scroll-top": targetHeight-70},600,'easeInOutQuint');
-        
-//      $('.nav_list li').css('color','#fff');
-//      $(this).find('li').css('color','#22F2C8');
-    });
-    
-    //刷新页面跳转
-    var hrefId='_'+location.href.split('#')[1];
-    //alert(hrefId);
-    if(location.href.split('#')[1]){
-        var hrefHeight=document.getElementById(hrefId).offsetTop;
-        $("html, body").animate({"scroll-top": hrefHeight-70},600,'easeInOutQuint');
-    }
-});
-//a标签title提示
-$(function() {
-    $("a[title]").each(function() {
-        var a = $(this);
-        var title = a.attr('title');
-        if (title == undefined || title == "") return;
-        a.data('title', title).removeAttr('title').hover(
-
-        function() {
-            var offset = a.offset();
-            $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+        }else if(targetTop <= 600){="" $('#backtop').stop();="" $('#backtop').animate({'right':'-40px'},200);="" }="" });="" 顶端导航跳转="" $(document).on('click','.nav_list',function(){="" var="" targetid="_" +$(this).attr('href').substr(1);="" targetheight="document.getElementById(targetId).offsetTop;" $("html,="" body").animate({"scroll-top":="" targetheight-70},600,'easeinoutquint');="" $('.nav_list="" li').css('color','#fff');="" $(this).find('li').css('color','#22f2c8');="" 刷新页面跳转="" hrefid="_" +location.href.split('#')[1];="" alert(hrefid);="" if(location.href.split('#')[1]){="" hrefheight="document.getElementById(hrefId).offsetTop;" hrefheight-70},600,'easeinoutquint');="" a标签title提示="" $(function()="" {="" $("a[title]").each(function()="" a="$(this);" title="a.attr('title');" if="" (title="=" undefined="" ||="" "")="" return;="" a.data('title',="" title).removeattr('title').hover(="" function()="" offset="a.offset();" $("<div="" id="\"anchortitlecontainer\"">").appendTo($("body")).html(title).css({
                 top: offset.top + a.outerHeight() + 10,
                 left: offset.left + a.outerWidth()/2 + 1
             }).fadeIn(function() {
@@ -200,3 +166,4 @@ jQuery.extend( jQuery.easing,
             return jQuery.easing.easeOutBounce (x, t*2-d, 0, c, d) * .5 + c*.5 + b;
         }
     });
+</=>

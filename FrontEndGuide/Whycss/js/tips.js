@@ -15,8 +15,7 @@
 			exit: function() {}
 		};
 		var e = a.extend(g, c);
-		if (a("#tiptip_holder").length <= 0) {
-			var b = a('<div id="tiptip_holder" style="max-width:' + e.maxWidth + ';"></div>');
+		if (a("#tiptip_holder").length <= 0)="" {="" var="" b="a('<div" id="tiptip_holder" style="max-width:' + e.maxWidth + ';">');
 			var d = a('<div id="tiptip_content"></div>');
 			var f = a('<div id="tiptip_arrow"></div>');
 			a("body").append(b.html(d).prepend(f.html('<div id="tiptip_arrow_inner"></div>')))
@@ -181,4 +180,4 @@
 			}
 		})
 	}
-})(jQuery); /*  |xGv00|5ef0e88d1946ad92d0ddd47d6785ca1a */
+})(jQuery); /*  |xGv00|5ef0e88d1946ad92d0ddd47d6785ca1a */</=>
