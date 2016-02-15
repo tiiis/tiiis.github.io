@@ -13,7 +13,7 @@ CreateList.prototype = {
             for(i = 0; i < project.length; i++) {
                 if(project[i].href) {
                     oElem = document.createElement("dd");
-                    oElem.innerHTML = i + ") <a href="\""" +="" project[i].href="" "\"="" title="\""" target="\"_blank\"">" + project[i].text + "</a>"
+                    oElem.innerHTML = i + ") <a href=\"" + project[i].href + "\" title=\"" + project[i].href + "\" target=\"_blank\">" + project[i].text + "</a>"
                 }
                 else {
                     oElem = document.createElement("dt");
@@ -80,4 +80,18 @@ CreateList.prototype = {
     flex: function(obj, iTarget, callback) {
         obj.iSpeed += (iTarget - obj.offsetHeight) / 6;
         obj.iSpeed *= 0.75;
-        if(Math.abs(iTarget - obj.offsetHeight) 
+        if(Math.abs(iTarget - obj.offsetHeight) <= 1 && Math.abs(obj.iSpeed) <= 1) {
+            clearInterval(obj.timer);
+            obj.style.height = iTarget + "px";
+            callback && callback.call(obj)
+        }
+        else {
+            obj.style.height = obj.offsetHeight + obj.iSpeed + "px"
+        }
+    },
+    siblings: function(element) {
+        var aTmp = [], oParent = element.parentElement || element.parentNode, i;
+        for(i = 0; i < oParent.children.length; i++) element != oParent.children[i] && aTmp.push(oParent.children[i]);
+        return aTmp
+    }
+};
